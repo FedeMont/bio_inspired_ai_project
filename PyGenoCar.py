@@ -1065,7 +1065,7 @@ class MainWindow(QMainWindow):
                     if not os.path.exists(path):
                         # raise Exception('{} already exists. This would overwrite everything, choose a different folder or delete it and try again'.format(path))
                         os.makedirs(path)
-                    save_population(path, self.file_name, self.population, get_settings(), self.current_generation)
+                    save_population(path, self.file_name, self.population, get_settings(), self.current_generation, datetime.now())
 
                 self.state = States.STOP
                 return
