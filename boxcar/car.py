@@ -313,7 +313,7 @@ class Car(Individual):
         self.wheels_vertices_pol = [None for _ in range(8)]
 
         for idx, (wheel_vertices_r, wheel_vertices_theta) in enumerate(zip(*self._chromosome[(genes['wheels_vertices_r'], genes['wheels_vertices_theta']), :])):
-            if (wheel_vertices_r and wheel_vertices_theta) and (wheel_vertices_r != "None" and wheel_vertices_theta != "None"):
+            if (wheel_vertices_r and wheel_vertices_theta) and (wheel_vertices_r != "None" and wheel_vertices_theta != "None") and (wheel_vertices_r != "nan" and wheel_vertices_theta != "nan"):
                 wheel_vertices_r, wheel_vertices_theta = string_to_rs_thetas(wheel_vertices_r, wheel_vertices_theta)
                 self.wheels_vertices_pol[idx] = [(r, theta) for (r, theta) in zip(wheel_vertices_r, wheel_vertices_theta)]
 

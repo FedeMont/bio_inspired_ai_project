@@ -82,7 +82,7 @@ def rs_thetas_to_string(rs_thetas: tuple) -> tuple:
 
 
 def string_to_rs_thetas(str_rs: str, str_thetas: str) -> tuple:
-    if str_rs is not None and str_thetas is not None:
+    if not str_rs == 'nan' and not str_thetas == 'nan':
         rs = [
             float(str_r)
             for str_r in str_rs.split("|")
